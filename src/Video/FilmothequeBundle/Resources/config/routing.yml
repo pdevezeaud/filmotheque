@@ -1,0 +1,19 @@
+video_filmotheque_homepage:
+    path:     /
+    defaults: { _controller: VideoFilmothequeBundle:Default:index }
+
+
+categorie_ajout:
+    path:     /Categorie/ajout
+    defaults: { _controller: VideoFilmothequeBundle:Categorie:ajout }
+
+categorie_affiche:
+    path:     /Categorie
+    defaults: { _controller: VideoFilmothequeBundle:Categorie:affiche }
+
+acteur_ajout:
+    path:     /acteur/ajout
+    defaults: { _controller: VideoFilmothequeBundle:Acteur:ajout }
+
+
+
