@@ -33,6 +33,8 @@ use Video\FilmothequeBundle\Entity\Categorie;
 
         }
 
+
+        //on recupere le contenu de la table transmis à la vue
         public function afficheAction(){
 
             $em = $this-> getDoctrine()->getManager();
