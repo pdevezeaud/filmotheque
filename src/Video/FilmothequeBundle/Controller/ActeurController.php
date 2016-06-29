@@ -8,7 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Video\FilmothequeBundle\Entity\Acteur;
-use Video\FilmothequeBundle\Form\ActeurType;
+use Video\FilmothequeBundle\Form\Type\ActeurType;
 
 
 class ActeurController extends Controller
@@ -16,7 +16,6 @@ class ActeurController extends Controller
     public function ajoutAction(Request $request)
     {
         $message = "Ajouter Acteur";
-        $em = $this->getDoctrine()->getManager();
 
         $acteur = new Acteur();
         $form = $this->createFormBuilder($acteur)
@@ -24,15 +23,16 @@ class ActeurController extends Controller
             ->add('prenom', TextType::class)
             ->add('sexe', TextType::class)
             ->add('datenaissance', TextType::class)
-            ->add('save', SubmitType::class, array('label' => 'Soumettre'))
             ->getForm();
 
         $form->handleRequest($request);
-        $em->persist($acteur);
-        $em->flush();
 
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($acteur);
+            $em->flush();
+
             return $this->redirectToRoute('acteur_ajout');
             $message = "Valider !!!";
         }

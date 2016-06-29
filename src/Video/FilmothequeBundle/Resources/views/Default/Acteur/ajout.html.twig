@@ -5,20 +5,18 @@
 
     {{ form_start(form) }}
 
-    <form method="POST">
 
-            <caption><h1>{{ msg }}</h1></caption>
-
-        <table>
+    <caption><h1>{{ msg }}</h1></caption>
+    <table>
+        <form method="POST">
             <thead>
             <tr>
                 <td>{{ form_label(form.nom, 'Nom:') }}</td>
                 <td>
                     {{ form_widget(form.nom) }}
-                 {{ form_errors(form.nom) }}
+                    {{ form_errors(form.nom) }}
                 </td>
             </tr>
-
             <tr>
                 <td>{{ form_label(form.prenom, 'Prenom:') }} </td>
                 <td>
@@ -26,27 +24,28 @@
                     {{ form_errors(form.prenom) }}
                 </td>
             </tr>
-
-
             <tr>
-            <td>{{ form_label(form.datenaissance, 'Birthday:') }}</td>
-            <td>
-                {{ form_widget(form.datenaissance) }}
-                {{ form_errors(form.datenaissance) }}
-            </td>
+                <td>{{ form_label(form.datenaissance, 'Birthday:') }}</td>
+                <td>
+                    {{ form_widget(form.datenaissance) }}
+                    {{ form_errors(form.datenaissance) }}
+                </td>
             </tr>
-
             <tr>
-            <td>{{ form_label(form.sexe, 'Sexe:') }}</td>
-            <td>
-                {{ form_widget(form.sexe) }}
-                {{ form_errors(form.sexe) }}
-            </td>
+                <td>{{ form_label(form.sexe, 'Sexe:') }}</td>
+                <td>
+                    {{ form_widget(form.sexe) }}
+                    {{ form_errors(form.sexe) }}
+                </td>
             </tr>
-
+            <tr>
+                <td>
+                    <button type="submit">Envoyer</button>
+                </td>
+            </tr>
             </thead>
-        </table>
-    </form>
+        </form>
+    </table>
 
 
     {{ form_end(form) }}
