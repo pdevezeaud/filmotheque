@@ -122,9 +122,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // acteur_ajout
-        if ($pathinfo === '/acteur/ajout') {
-            return array (  '_controller' => 'Video\\FilmothequeBundle\\Controller\\ActeurController::ajoutAction',  '_route' => 'acteur_ajout',);
+        if (0 === strpos($pathinfo, '/acteur')) {
+            // acteur_ajout
+            if ($pathinfo === '/acteur/ajout') {
+                return array (  '_controller' => 'Video\\FilmothequeBundle\\Controller\\ActeurController::ajoutAction',  '_route' => 'acteur_ajout',);
+            }
+
+            // acteur
+            if ($pathinfo === '/acteur') {
+                return array (  '_controller' => 'Video\\FilmothequeBundle\\Controller\\ActeurController::afficheAction',  '_route' => 'acteur',);
+            }
+
         }
 
         // homepage

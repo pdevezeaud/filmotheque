@@ -1,15 +1,11 @@
 <?php
 
-namespace Video\FilmothequeBundle\Form;
+namespace Video\FilmothequeBundle\Form\Type;
 
 
-use Doctrine\DBAL\Types\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-
-
-
 
 
 class ActeurType extends AbstractType
@@ -21,7 +17,11 @@ class ActeurType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom', TextType::class);
+            ->add('nom')
+            ->add('prenom')
+            ->add('sexe')
+            ->add('datenaissance');
+
 
     }
 
@@ -30,9 +30,12 @@ class ActeurType extends AbstractType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(Array(
+        $resolver->setDefaults(array(
             'data_class' => 'Video\FilmothequeBundle\Entity\Acteur'
         ));
+    }
+    public function getname(){
+        return 'Acteur';
     }
 
 }

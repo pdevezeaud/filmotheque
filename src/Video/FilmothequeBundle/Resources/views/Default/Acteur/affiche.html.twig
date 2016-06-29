@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+
+{% block body %}
+
+
+
+
+
+    <table>
+        <caption><h1>Affiche la liste des acteurs</h1></caption>
+
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Date naissance</th>
+            <th>Sexe</th>
+        </tr>
+        </thead>
+        </tbody>
+
+
+        {% for acteur in acteurs %}
+
+            <tr>
+                <td>{{ acteur.nom }}</td>
+                <td>{{ acteur.prenom }}</td>
+                <td>{{ acteur.datenaissance }}</td>
+                <td>{% if acteur.sexe=="h" & acteur.sexe=="H" %}
+                        Home
+                    {% else %}
+                        Femme
+                    {% endif %}
+                </td>
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+{% endblock %}

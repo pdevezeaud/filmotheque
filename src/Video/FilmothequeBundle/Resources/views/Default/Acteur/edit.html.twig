@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1> Modifier un Acteur </h1>
+
+       {{ form_start(form) }}
+
+    <form method="post">
+
+        {#<table>
+            <caption><h1>{{ msg }}</h1></caption>
+            <thead>
+            <tr>
+                <td>{{ form_label(form.nom) }}</td>
+                <td>
+                    {{ form_widget(form.nom) }}
+                    {{ form_errors(form.nom) }}
+                </td>
+            </tr>
+
+            <tr>
+                <td>{{ form_label(form.prenom) }}</td>
+                <td>
+                    {{ form_widget(form.prenom) }}
+                    {{ form_errors(form.prenom) }}
+                </td>
+            </tr>
+
+
+            <tr>
+            <td>{{ form_label(form.datenaissance) }}</td>
+            <td>
+                {{ form_widget(form.datenaissance) }}
+                {{ form_errors(form.datenaissance) }}
+            </td>
+            </tr>
+
+            <tr>
+            <td>{{ form_label(form.sexe) }}</td>
+            <td>
+                {{ form_widget(form.sexe) }}
+                {{ form_errors(form.sexe) }}
+            </td>
+            </tr>
+
+            </thead>
+        </table>#}
+
+
+
+
+        {{ form_errors(form) }}
+        {{ form_label(form.nom, 'Nom :') }} {{ form_widget(form.nom) }}
+        {{ form_label(form.prenom, 'Prenom :') }} {{ form_widget(form.prenom) }}
+        {{ form_label(form.datenaissance, 'Birthday :') }} {{ form_widget(form.datenaissance) }}
+        {{ form_label(form.sexe, 'Sexe') }} {{ form_widget(form.sexe) }}
+        {{ form_end(form) }}
+
+
+        {{ form_rest(form) }}#}
+
+    {{ form_end(form) }}
+    </form>
+{% endblock %}
+
+
+

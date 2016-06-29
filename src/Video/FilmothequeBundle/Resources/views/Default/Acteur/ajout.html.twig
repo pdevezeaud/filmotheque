@@ -2,12 +2,69 @@
 
 {% block body %}
 
-<h1> Ajout d'un Acteur   </h1>
+
+    {{ form_start(form) }}
+
+    <form method="POST">
+
+            <caption><h1>{{ msg }}</h1></caption>
+
+        <table>
+            <thead>
+            <tr>
+                <td>{{ form_label(form.nom, 'Nom:') }}</td>
+                <td>
+                    {{ form_widget(form.nom) }}
+                 {{ form_errors(form.nom) }}
+                </td>
+            </tr>
+
+            <tr>
+                <td>{{ form_label(form.prenom, 'Prenom:') }} </td>
+                <td>
+                    {{ form_widget(form.prenom) }}
+                    {{ form_errors(form.prenom) }}
+                </td>
+            </tr>
 
 
+            <tr>
+            <td>{{ form_label(form.datenaissance, 'Birthday:') }}</td>
+            <td>
+                {{ form_widget(form.datenaissance) }}
+                {{ form_errors(form.datenaissance) }}
+            </td>
+            </tr>
 
+            <tr>
+            <td>{{ form_label(form.sexe, 'Sexe:') }}</td>
+            <td>
+                {{ form_widget(form.sexe) }}
+                {{ form_errors(form.sexe) }}
+            </td>
+            </tr>
+
+            </thead>
+        </table>
+    </form>
+
+
+    {{ form_end(form) }}
 
 {% endblock %}
+
+      {#  {{ form_start(form) }}
+        {{ form_errors(form) }}
+        {{ form_label(form.nom, 'Nom :') }} {{ form_widget(form.nom) }}
+        {{ form_label(form.prenom, 'Prenom :') }} {{ form_widget(form.prenom) }}
+        {{ form_label(form.datenaissance, 'Birthday :') }} {{ form_widget(form.datenaissance) }}
+        {{ form_label(form.sexe, 'Sexe') }} {{ form_widget(form.sexe) }}
+        {{ form_end(form) }}
+
+
+        {{ form_rest(form) }}#}
+
+
 
 
 

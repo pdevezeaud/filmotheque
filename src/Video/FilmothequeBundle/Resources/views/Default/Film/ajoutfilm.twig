@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1> Ajout d'un Film   </h1>
+
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_label(form.nom, 'Nom :') }} {{ form_widget(form.nom) }}
+    {{ form_label(form.prenom, 'Prenom :') }} {{ form_widget(form.prenom) }}
+    {{ form_label(form.datenaissance, 'Birthday :') }} {{ form_widget(form.datenaissance) }}
+    {{ form_label(form.sexe, 'Sexe') }} {{ form_widget(form.sexe) }}
+    {{ form_end(form) }}
+
+
+{% endblock %}
+
+
+
