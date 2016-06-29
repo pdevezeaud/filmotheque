@@ -21,8 +21,6 @@ class ActeurType extends AbstractType
             ->add('prenom')
             ->add('sexe')
             ->add('datenaissance');
-
-
     }
 
     /**
